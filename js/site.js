@@ -21,3 +21,6 @@
       console.log("Material:", ring.material);
       console.log("Price:", ring.price);
       console.log("Gemstone:", ring.gemstone);
+
+
+      // This is a new comment to test Github Repo.
