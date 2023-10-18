@@ -150,6 +150,14 @@ window.addEventListener('scroll', () => {
         titleText.style.display = 'block';
     }
 
+    // Animation for Scroll Down Indicator
+    const arrowDiv = document.querySelector(".scroll-indicator");
+    if (window.pageYOffset > 50) { // adjust this value based on when you want the arrow to disappear
+        arrowDiv.style.opacity = "0";
+    } else {
+        arrowDiv.style.opacity = "1";
+    }
+
     // Animation for Story Snippet
     for (let snippet of storySnippets) {
         if (frameIndex >= snippet.startFrame && frameIndex <= snippet.endFrame) {
