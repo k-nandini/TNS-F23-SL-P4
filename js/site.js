@@ -1,5 +1,26 @@
+// Load Custom Fonts
+// Create the style element
+const fontStyles = document.createElement("style");
+fontStyles.type = "text/css";
+
+// Add the font-face rules
+fontStyles.appendChild(document.createTextNode(`
+    @font-face {
+        font-family: 'HelloGoodOldStyle';
+        src: url('assets/fonts/hellogoodoldstyleregular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Ahganyira';
+        src: url('assets/fonts/ahganirya.ttf') format('truetype');
+    }
+`));
+
+// Append the style element to the document head
+document.head.appendChild(fontStyles);
+
 //
-//Deeply Nested Objects
+// Deeply Nested Objects for Story Data
 //
 let lostRingStory = {
     metaData: {
@@ -85,12 +106,9 @@ let lostRingStory = {
     currentStatus: "Lost",
     searchEfforts: "Contacted the cab company, retraced steps, offered a reward."
 };
-//
-//
 
 //
-//Scroll Ring Animation
-//Source - https://www.youtube.com/watch?v=4OcAAj8aqS8
+// Scroll Ring Animation (Image Sequencing based on Scroll Position)
 //
 const html = document.documentElement;
 const canvas = document.getElementById("hero-lightpass");
@@ -125,11 +143,11 @@ window.addEventListener('scroll', () => {
       Math.ceil(scrollFraction * frameCount)
     );
 
-    //Animation for Landing Page Title
+    // Animation for Landing Page Title
     if (html.scrollTop > 10) {  
         titleText.style.display = 'none'; 
     } else {
-        titleText.style.display = 'block';  // This shows the title again when you scroll back to the top
+        titleText.style.display = 'block';
     }
 
     // Animation for Story Snippet
@@ -151,11 +169,9 @@ const preloadImages = () => {
 };
 
 preloadImages()
-//
-//
 
 //
-// The Lost Ring Story Animation
+// The Lost Ring Story Animation Data
 //
 const storySnippets = [
     {
@@ -251,10 +267,7 @@ const storySnippets = [
 ];
 
 //
-//
-
-//
-//Styling for Text Animation
+// Styling for Text Animation
 //
 const animatedText = document.createElement('div');
 animatedText.style.fontFamily = 'HelloGoodOldStyle';
@@ -278,25 +291,3 @@ titleText.style.color = 'white';
 titleText.style.fontSize = '3em';  // You can adjust this value as needed
 titleText.style.textAlign = 'center';
 document.body.appendChild(titleText);
-
-// Create the style element
-const fontStyles = document.createElement("style");
-fontStyles.type = "text/css";
-
-// Add the font-face rules
-fontStyles.appendChild(document.createTextNode(`
-    @font-face {
-        font-family: 'HelloGoodOldStyle';
-        src: url('assets/fonts/hellogoodoldstyleregular.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Ahganyira';
-        src: url('assets/fonts/ahganirya.ttf') format('truetype');
-    }
-`));
-
-// Append the style element to the document head
-document.head.appendChild(fontStyles);
-//
-//

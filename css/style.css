@@ -1,27 +1,35 @@
+/* Base styles for HTML and body elements */
+
+/* Ensures the HTML height fills the viewport height */
 html {
-    height: 100vh;
-  }
-  
+  height: 100vh;
+}
+
+/* Body styling */
 body {
-  background: #000;
-  height: 500vh;
+  background: #000;  /* Setting the body's background color to black */
+  height: 500vh;     /* Setting the body height to be 5 times the viewport height */
 }
 
+/* Canvas styling */
 canvas {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  max-height: 100vh;
-  max-width: 100vw;
-  transform: translate(-50%, -50%);
+  position: fixed;    /* Canvas position is fixed regardless of page scroll */
+  left: 50%;          /* Centering canvas horizontally in the viewport */
+  top: 50%;           /* Centering canvas vertically in the viewport */
+  max-height: 100vh;  /* Ensuring canvas doesn't exceed viewport height */
+  max-width: 100vw;   /* Ensuring canvas doesn't exceed viewport width */
+  transform: translate(-50%, -50%); /* This offsets the canvas's own dimensions for exact centering */
 }
 
+/* Font face declarations */
 
+/* Defining the 'HelloGoodOldStyle' font using a local .ttf file */
 @font-face {
   font-family: 'HelloGoodOldStyle';
   src: url('assets/fonts/hellogoodoldstyleregular.ttf') format('truetype');
 }
 
+/* Defining the 'Ahganyira' font using a local .ttf file */
 @font-face {
   font-family: 'Ahganyira';
   src: url('assets/fonts/ahganirya.ttf') format('truetype');

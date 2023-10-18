@@ -1,5 +1,15 @@
-- Author: Nandini Kumar
-- Core Lab Systems Assignment - Deeply Nested Object
-- Subject: My Lost Ring
+**My Lost Ring: A Tale of Sentiment and Hope**
 
-- My object is my ring that I got from my mother as a gift. I received it as a form of protection since it is my astrological birthstone: yellow sapphire. My mother had it made for me in 2017, from family jewelers. It was made from yellow gold, size 4.5 to fit my index finger perfectly. The oval cut yellow sapphire was embedded into the center such that the bottom of it touched my skin. This is the story of how I lost it and how I could possible get it back.
+*Author:* Nandini Kumar  
+*Assignment:* Core Lab Systems - Deeply Nested Object  
+*Subject:* My Lost Ring  
+
+---
+
+The gleam of the ring on my index finger was not just any ordinary gleam. It was a reflection of cherished moments, love, and memories. The beautiful ring I wore was not just a piece of jewelry but a gift from my beloved mother. Sized perfectly at 4.5, it adorned my index finger, complementing its grace.
+
+Made of shimmering yellow gold, its most mesmerizing feature was the oval-cut yellow sapphire set at its center. The stone, known as my astrological birthstone, was embedded in such a way that its base gently touched my skin, reinforcing its significance as a symbol of protection. 
+
+The ring was crafted in 2017 by the skilled artisans at Family Jewelers, a name our family trusted. And while the gold and sapphire added to its value, its true worth was the sentiment it held and the hands that gifted it to me.
+
+However, like many stories that hold a twist, my tale too took a heartbreaking turn. One day, I found the finger, which once bore the weight of that beautiful ring, empty. The story that unfolds is not just about the loss but also about hope, the attempts to find my treasured possession, and the wish that someday, somehow, it might find its way back to me.
