@@ -1,4 +1,94 @@
 //
+//Deeply Nested Objects
+//
+let lostRingStory = {
+    metaData: {
+        title: "The Lost Ring",
+        author: "Nandini Kumar",
+        dateCreated: new Date().toISOString().split('T')[0],
+        origin: "India",
+        narrationStyle: "First-person"
+    },
+    ringDetails: {
+        physicalAttributes: {
+            material: "Gold",
+            gemstone: "Yellow Sapphire",
+            size: 5,
+            weight: 8,
+            hallmark: "14K",
+            age: "4 years",
+            isAntique: false,
+            isCustomMade: true,
+            appraisalValue: "$3500",
+            purchaseLocation: "Delhi"
+        },
+        manufacturerInfo: {
+            name: "Family Jewelers",
+            description: "A leading jeweler known for exquisite craftsmanship.",
+            location: "Bhavnagar",
+            establishedYear: 1985,
+        },
+        design: {
+            centerStone: {
+                shape: "Oval",
+                type: "Yellow Sapphire",
+                touchesSkin: true,
+                astrologicalSignificance: "It's my astrological birthstone.",
+                color: "Bright Yellow",
+                clarity: "VVS1"
+            },
+            sideStones: {
+                number: 6,
+                type: "Diamond",
+                setting: "Pave",
+                caratEach: 0.05,
+                totalCarat: 0.3
+            },
+            ringBase: {
+                materials: ["Silver", "Gold"],
+                description: "A dual-material ring base for added allure.",
+                finish: "Glossy"
+            }
+        },
+        production: {
+            year: 2017,
+            gemstoneCarat: 0.75,
+            hasCertificate: true,
+            certificateNumber: "FG12345",
+            makingCharges: 1000,
+            isResizable: false,
+            warrantyPeriod: "1 year"
+        }
+    },
+    backstory: {
+        relation: "Mother",
+        purpose: "Protection",
+        storyOrigin: "A cultural belief",
+        emotion: "Sentimental",
+        event: {
+            name: "Date night",
+            location: "Jazz Bar",
+            date: "2018-03-14",
+            accompanyingPerson: {
+                relationship: "Current Partner",
+                name: "John Doe",
+                mutualActivity: "Dancing"
+            },
+            transport: {
+                type: "Cab",
+                driverName: "Irina",
+                cabCompany: "Uber"
+            },
+            memories: "It was a night filled with laughter, love, and music."
+        }
+    },
+    currentStatus: "Lost",
+    searchEfforts: "Contacted the cab company, retraced steps, offered a reward."
+};
+//
+//
+
+//
 //Scroll Ring Animation
 //Source - https://www.youtube.com/watch?v=4OcAAj8aqS8
 //
@@ -34,8 +124,23 @@ window.addEventListener('scroll', () => {
       frameCount - 1,
       Math.ceil(scrollFraction * frameCount)
     );
-    
-    requestAnimationFrame(() => updateImage(frameIndex + 1))
+
+    //Animation for Landing Page Title
+    if (html.scrollTop > 10) {  
+        titleText.style.display = 'none'; 
+    } else {
+        titleText.style.display = 'block';  // This shows the title again when you scroll back to the top
+    }
+
+    // Animation for Story Snippet
+    for (let snippet of storySnippets) {
+        if (frameIndex >= snippet.startFrame && frameIndex <= snippet.endFrame) {
+            animatedText.textContent = snippet.text;
+            break;
+        }
+    }
+
+    requestAnimationFrame(() => updateImage(frameIndex + 1));
 });
 
 const preloadImages = () => {
@@ -49,72 +154,149 @@ preloadImages()
 //
 //
 
-/*
-// Top Level Properties
-let lostRing = {
-    material: "Gold",
-    gemstone: "Yellow Sapphire",
-    size: 5,
-    price: 3000,
-    weight: 8,
-    isAntique: false,
-    manufacturer: "XYZ Jewelers",
-    description: "A stunning gold ring with a sapphire center stone.",
-    hallmark: "14K",
-    isCustomMade: true,
-    productionDetails: {  // Nested Property 1
-        productionYear: 2017,
-        gemstoneCarat: 0.75,
-        hasCertificate: true,
-        makingCharges: 1000,
-        isResizable: false
+//
+// The Lost Ring Story Animation
+//
+const storySnippets = [
+    {
+        startFrame: 0,
+        endFrame: 1,
+        text: ``
     },
-    designDetails: {  // Nested Property 2
-        centerStone: {
-            shape: "Oval",
-            type: "Yellow Sapphire",
-            touchesSkin: true
-        },
-        sideStones: {
-            number: 6,
-            type: "Diamond",
-            setting: "Pave"
-        },
-        ringBase: {
-            materials: ["Silver", "Gold"]  // Array type
-        }
+    {
+        startFrame: 2,
+        endFrame: 15,
+        text: `This story is about my lost ring, a gift from my ${lostRingStory.backstory.relation}.`
     },
-    story: {  // Nested Property 3
-        event: "Date night",
-        location: "Jazz Bar",
-        partner: "Current Partner",
-        cabDriver: "Irina"
+    {
+        startFrame: 16,
+        endFrame: 30,
+        text: `Crafted by ${lostRingStory.ringDetails.manufacturerInfo.name}, a renowned jeweler from ${lostRingStory.ringDetails.manufacturerInfo.location}, it was more than just an ornament.`
+    },
+    {
+        startFrame: 31,
+        endFrame: 45,
+        text: `Given to me in ${lostRingStory.ringDetails.production.year}, it served as ${lostRingStory.backstory.purpose}.`
+    },
+    {
+        startFrame: 46,
+        endFrame: 60,
+        text: `Its design showcased a ${lostRingStory.ringDetails.design.centerStone.shape}-cut ${lostRingStory.ringDetails.design.centerStone.type}, symbolizing ${lostRingStory.ringDetails.design.centerStone.astrologicalSignificance}.`
+    },
+    {
+        startFrame: 61,
+        endFrame: 75,
+        text: `Accompanied by ${lostRingStory.ringDetails.design.sideStones.number} sparkling ${lostRingStory.ringDetails.design.sideStones.type}s, the ring gleamed in every light.`
+    },
+    {
+        startFrame: 76,
+        endFrame: 90,
+        text: `The base was meticulously crafted using ${lostRingStory.ringDetails.design.ringBase.materials[0]} and ${lostRingStory.ringDetails.design.ringBase.materials[1]}, giving it a unique allure.`
+    },
+    {
+        startFrame: 91,
+        endFrame: 105,
+        text: `However, on a memorable ${lostRingStory.backstory.event.name} at the ${lostRingStory.backstory.event.location} with ${lostRingStory.backstory.event.accompanyingPerson.name}, my heart sank.`
+    },
+    {
+        startFrame: 106,
+        endFrame: 120,
+        text: `After a night of ${lostRingStory.backstory.event.accompanyingPerson.mutualActivity}, laughter, and unforgettable moments, I lost it.`
+    },
+    {
+        startFrame: 121,
+        endFrame: 135,
+        text: `It was in a cab driven by ${lostRingStory.backstory.event.transport.driverName} from ${lostRingStory.backstory.event.transport.cabCompany} that I left the piece of my heart.`
+    },
+    {
+        startFrame: 136,
+        endFrame: 150,
+        text: `The search was frantic. I retraced steps, contacted the cab company, even offered a reward, but it was like searching for a needle in a haystack.`
+    },
+    {
+        startFrame: 151,
+        endFrame: 165,
+        text: `My ring wasn't just metal and stone; it was memories, love, protection, and my mother's blessings.`
+    },
+    {
+        startFrame: 166,
+        endFrame: 180,
+        text: `Purchased from ${lostRingStory.ringDetails.physicalAttributes.purchaseLocation} and valued at ${lostRingStory.ringDetails.physicalAttributes.appraisalValue}, its emotional value was immeasurable.`
+    },
+    {
+        startFrame: 181,
+        endFrame: 195,
+        text: `Every sparkle reminded me of moments, every shimmer of emotions, every glint of the protection it promised.`
+    },
+    {
+        startFrame: 196,
+        endFrame: 210,
+        text: `It was not just an ornament; it was a piece of art, a piece of history, a piece of my soul.`
+    },
+    {
+        startFrame: 211,
+        endFrame: 225,
+        text: `Even today, I hope, somewhere, somehow, it finds its way back to me.`
+    },
+    {
+        startFrame: 226,
+        endFrame: 240,
+        text: `But till then, the story of my lost ring remains, reminding me of the impermanence of materialistic joys and the permanence of memories.`
+    },
+    {
+        startFrame: 241,
+        endFrame: 250,
+        text: `To those who find it, may it bring you the same joy, protection, and luck it promised me.`
     }
-};
+];
 
-// Functions
-function tellStory() {
-    const storyText = `This story is about my lost ring that I got from my mother as a gift. I received it as a 
-        form of protection in ${lostRing.productionDetails.productionYear}. The ring was designed to have 
-        a large ${lostRing.designDetails.centerStone.shape} cut ${lostRing.designDetails.centerStone.type} 
-        stone as its center piece. It's my astrological birthstone, accompanied by 
-        ${lostRing.designDetails.sideStones.number} smaller ${lostRing.designDetails.sideStones.type}s 
-        for decoration studded in ${lostRing.designDetails.ringBase.materials[0]} and 
-        ${lostRing.designDetails.ringBase.materials[1]} for the ring base.
+//
+//
 
-        On a memorable ${lostRing.story.event} with my ${lostRing.story.partner} at the 
-        ${lostRing.story.location}, after a delightful evening, I decided to remove the ring for safety 
-        while on my way home in an Uber driven by ${lostRing.story.cabDriver}. As I tried to stash the ring away,
-        an unexpected bump caused it to slip from my grasp, marking the beginning of its mysterious absence from my life.`;
+//
+//Styling for Text Animation
+//
+const animatedText = document.createElement('div');
+animatedText.style.fontFamily = 'HelloGoodOldStyle';
+animatedText.style.position = 'fixed';
+animatedText.style.top = '50%'; // Center vertically
+animatedText.style.left = '50%'; // Center horizontally
+animatedText.style.transform = 'translate(-50%, -50%)'; // To account for the text's own dimensions
+animatedText.style.color = 'white';
+animatedText.style.fontSize = '2em';
+animatedText.style.textAlign = 'center'; // To center-align the text content
+document.body.appendChild(animatedText);
 
-    document.getElementById('storyOutput').innerText = storyText;
-}
+const titleText = document.createElement('div');
+titleText.style.fontFamily = 'Ahganyira';
+titleText.innerHTML = "The Lost Ring";  // The title of your story
+titleText.style.position = 'fixed';
+titleText.style.top = '50%';
+titleText.style.left = '50%';
+titleText.style.transform = 'translate(-50%, -50%)';
+titleText.style.color = 'white';
+titleText.style.fontSize = '3em';  // You can adjust this value as needed
+titleText.style.textAlign = 'center';
+document.body.appendChild(titleText);
 
-function updateTitle(newTitle) {
-    document.title = newTitle;
-}
+// Create the style element
+const fontStyles = document.createElement("style");
+fontStyles.type = "text/css";
 
-// Execute Functions
-tellStory();
-updateTitle("JS The Lost Ring JS");
-*/
+// Add the font-face rules
+fontStyles.appendChild(document.createTextNode(`
+    @font-face {
+        font-family: 'HelloGoodOldStyle';
+        src: url('assets/fonts/hellogoodoldstyleregular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Ahganyira';
+        src: url('assets/fonts/ahganirya.ttf') format('truetype');
+    }
+`));
+
+// Append the style element to the document head
+document.head.appendChild(fontStyles);
+//
+//
