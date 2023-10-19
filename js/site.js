@@ -115,7 +115,7 @@ const canvas = document.getElementById("hero-lightpass");
 const context = canvas.getContext("2d");
 
 const currentFrame = index => (
-  `assets/images/V2/${index.toString().padStart(4, '0')}.png` //Function to change image number dynamically
+  `assets/images/V2/${index.toString().padStart(4, '0')}.jpeg` //Function to change image number dynamically
 )
 const frameCount = 270; //Number of Frames
 
@@ -131,7 +131,7 @@ img.onload=function(){
 
 const updateImage = index => {
     img.src = currentFrame(index);
-    context.clearRect(0, 0, canvas.width, canvas.height); // Clear the entire canvas - As using transperent PNG's in V2.
+    //context.clearRect(0, 0, canvas.width, canvas.height); // Clear the entire canvas - As using transperent PNG's from V2.
     context.drawImage(img, 0, 0);
 }
 
