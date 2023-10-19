@@ -115,12 +115,12 @@ const canvas = document.getElementById("hero-lightpass");
 const context = canvas.getContext("2d");
 
 const currentFrame = index => (
-  `assets/images/V2/${index.toString().padStart(4, '0')}.png` //Function to change image number dynamically
+  `assets/images/V1/${index.toString().padStart(5, '0')}.jpg` //Function to change image number dynamically
 )
-const frameCount = 270; //Number of Frames
+const frameCount = 250; //Number of Frames
 
-canvas.width = 1920;
-canvas.height = 1080;
+canvas.width = 2560;
+canvas.height = 1440;
 
 const img = new Image()
 img.src = currentFrame(1);
@@ -131,7 +131,6 @@ img.onload=function(){
 
 const updateImage = index => {
     img.src = currentFrame(index);
-    context.clearRect(0, 0, canvas.width, canvas.height); // Clear the entire canvas - As using transperent PNG's in V2.
     context.drawImage(img, 0, 0);
 }
 
@@ -144,16 +143,16 @@ window.addEventListener('scroll', () => {
       Math.ceil(scrollFraction * frameCount)
     );
 
-    // Animation for Landing Page Title based on frame
-    if (frameIndex > 15) {  
+    // Animation for Landing Page Title
+    if (html.scrollTop > 10) {  
         titleText.style.display = 'none'; 
     } else {
         titleText.style.display = 'block';
     }
 
-    // Animation for Scroll Down Indicator based on frame
+    // Animation for Scroll Down Indicator
     const arrowDiv = document.querySelector(".scroll-indicator");
-    if (frameIndex > 15) {
+    if (window.pageYOffset > 50) { // adjust this value based on when you want the arrow to disappear
         arrowDiv.style.opacity = "0";
     } else {
         arrowDiv.style.opacity = "1";
@@ -185,92 +184,92 @@ preloadImages()
 const storySnippets = [
     {
         startFrame: 0,
-        endFrame: 15,
+        endFrame: 1,
         text: ``
+    },
+    {
+        startFrame: 2,
+        endFrame: 15,
+        text: `This story is about my lost ring, a gift from my ${lostRingStory.backstory.relation}.`
     },
     {
         startFrame: 16,
         endFrame: 30,
-        text: `This story is about my lost ring, a gift from my ${lostRingStory.backstory.relation}.`
+        text: `Crafted by ${lostRingStory.ringDetails.manufacturerInfo.name}, a renowned jeweler from ${lostRingStory.ringDetails.manufacturerInfo.location}, it was more than just an ornament.`
     },
     {
         startFrame: 31,
         endFrame: 45,
-        text: `Crafted by ${lostRingStory.ringDetails.manufacturerInfo.name}, a renowned jeweler from ${lostRingStory.ringDetails.manufacturerInfo.location}, it was more than just an ornament.`
+        text: `Given to me in ${lostRingStory.ringDetails.production.year}, it served as ${lostRingStory.backstory.purpose}.`
     },
     {
         startFrame: 46,
         endFrame: 60,
-        text: `Given to me in ${lostRingStory.ringDetails.production.year}, it served as ${lostRingStory.backstory.purpose}.`
+        text: `Its design showcased a ${lostRingStory.ringDetails.design.centerStone.shape}-cut ${lostRingStory.ringDetails.design.centerStone.type}, symbolizing ${lostRingStory.ringDetails.design.centerStone.astrologicalSignificance}.`
     },
     {
         startFrame: 61,
         endFrame: 75,
-        text: `Its design showcased a ${lostRingStory.ringDetails.design.centerStone.shape}-cut ${lostRingStory.ringDetails.design.centerStone.type}, symbolizing ${lostRingStory.ringDetails.design.centerStone.astrologicalSignificance}.`
+        text: `Accompanied by ${lostRingStory.ringDetails.design.sideStones.number} sparkling ${lostRingStory.ringDetails.design.sideStones.type}s, the ring gleamed in every light.`
     },
     {
         startFrame: 76,
         endFrame: 90,
-        text: `Accompanied by ${lostRingStory.ringDetails.design.sideStones.number} sparkling ${lostRingStory.ringDetails.design.sideStones.type}s, the ring gleamed in every light.`
+        text: `The base was meticulously crafted using ${lostRingStory.ringDetails.design.ringBase.materials[0]} and ${lostRingStory.ringDetails.design.ringBase.materials[1]}, giving it a unique allure.`
     },
     {
         startFrame: 91,
         endFrame: 105,
-        text: `The base was meticulously crafted using ${lostRingStory.ringDetails.design.ringBase.materials[0]} and ${lostRingStory.ringDetails.design.ringBase.materials[1]}, giving it a unique allure.`
+        text: `However, on a memorable ${lostRingStory.backstory.event.name} at the ${lostRingStory.backstory.event.location} with ${lostRingStory.backstory.event.accompanyingPerson.name}, my heart sank.`
     },
     {
         startFrame: 106,
         endFrame: 120,
-        text: `However, on a memorable ${lostRingStory.backstory.event.name} at the ${lostRingStory.backstory.event.location} with ${lostRingStory.backstory.event.accompanyingPerson.name}, my heart sank.`
+        text: `After a night of ${lostRingStory.backstory.event.accompanyingPerson.mutualActivity}, laughter, and unforgettable moments, I lost it.`
     },
     {
         startFrame: 121,
         endFrame: 135,
-        text: `After a night of ${lostRingStory.backstory.event.accompanyingPerson.mutualActivity}, laughter, and unforgettable moments, I lost it.`
+        text: `It was in a cab driven by ${lostRingStory.backstory.event.transport.driverName} from ${lostRingStory.backstory.event.transport.cabCompany} that I left the piece of my heart.`
     },
     {
         startFrame: 136,
         endFrame: 150,
-        text: `It was in a cab driven by ${lostRingStory.backstory.event.transport.driverName} from ${lostRingStory.backstory.event.transport.cabCompany} that I left the piece of my heart.`
+        text: `The search was frantic. I retraced steps, contacted the cab company, even offered a reward, but it was like searching for a needle in a haystack.`
     },
     {
         startFrame: 151,
         endFrame: 165,
-        text: `The search was frantic. I retraced steps, contacted the cab company, even offered a reward, but it was like searching for a needle in a haystack.`
+        text: `My ring wasn't just metal and stone; it was memories, love, protection, and my mother's blessings.`
     },
     {
         startFrame: 166,
         endFrame: 180,
-        text: `My ring wasn't just metal and stone; it was memories, love, protection, and my mother's blessings.`
+        text: `Purchased from ${lostRingStory.ringDetails.physicalAttributes.purchaseLocation} and valued at ${lostRingStory.ringDetails.physicalAttributes.appraisalValue}, its emotional value was immeasurable.`
     },
     {
         startFrame: 181,
         endFrame: 195,
-        text: `Purchased from ${lostRingStory.ringDetails.physicalAttributes.purchaseLocation} and valued at ${lostRingStory.ringDetails.physicalAttributes.appraisalValue}, its emotional value was immeasurable.`
+        text: `Every sparkle reminded me of moments, every shimmer of emotions, every glint of the protection it promised.`
     },
     {
         startFrame: 196,
         endFrame: 210,
-        text: `Every sparkle reminded me of moments, every shimmer of emotions, every glint of the protection it promised.`
+        text: `It was not just an ornament; it was a piece of art, a piece of history, a piece of my soul.`
     },
     {
         startFrame: 211,
         endFrame: 225,
-        text: `It was not just an ornament; it was a piece of art, a piece of history, a piece of my soul.`
+        text: `Even today, I hope, somewhere, somehow, it finds its way back to me.`
     },
     {
         startFrame: 226,
         endFrame: 240,
-        text: `Even today, I hope, somewhere, somehow, it finds its way back to me.`
-    },
-    {
-        startFrame: 241,
-        endFrame: 255,
         text: `But till then, the story of my lost ring remains, reminding me of the impermanence of materialistic joys and the permanence of memories.`
     },
     {
-        startFrame: 256,
-        endFrame: 270,
+        startFrame: 241,
+        endFrame: 250,
         text: `To those who find it, may it bring you the same joy, protection, and luck it promised me.`
     }
 ];
