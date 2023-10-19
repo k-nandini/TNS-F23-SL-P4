@@ -131,7 +131,6 @@ img.onload=function(){
 
 const updateImage = index => {
     img.src = currentFrame(index);
-    //context.clearRect(0, 0, canvas.width, canvas.height); // Clear the entire canvas - As using transperent PNG's from V2.
     context.drawImage(img, 0, 0);
 }
 
