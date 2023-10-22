@@ -240,37 +240,37 @@ const storySnippets = [
     {
         startFrame: 166,
         endFrame: 180,
-        text: `My ring wasn't just metal and stone; it was memories, love, protection, and my mother's blessings.`
+        text: `The ring was not just a piece of jewelry, it was a piece of my heart. Every glance at it reminded me of my mother's love.`
     },
     {
         startFrame: 181,
         endFrame: 195,
-        text: `Purchased from ${lostRingStory.ringDetails.physicalAttributes.purchaseLocation} and valued at ${lostRingStory.ringDetails.physicalAttributes.appraisalValue}, its emotional value was immeasurable.`
+        text: `Now, all I have are memories and a hope that it finds its way back to me.`
     },
     {
         startFrame: 196,
         endFrame: 210,
-        text: `Every sparkle reminded me of moments, every shimmer of emotions, every glint of the protection it promised.`
+        text: `Until then, I cherish the times it was with me and the story it represents.`
     },
     {
         startFrame: 211,
         endFrame: 225,
-        text: `It was not just an ornament; it was a piece of art, a piece of history, a piece of my soul.`
+        text: `If you ever come across it, remember the love and legacy it carries.`
     },
     {
         startFrame: 226,
         endFrame: 240,
-        text: `Even today, I hope, somewhere, somehow, it finds its way back to me.`
+        text: `And maybe, just maybe, help it find its way back home.`
     },
     {
         startFrame: 241,
         endFrame: 255,
-        text: `But till then, the story of my lost ring remains, reminding me of the impermanence of materialistic joys and the permanence of memories.`
+        text: `For in finding the ring, you find a piece of my soul.`
     },
     {
         startFrame: 256,
         endFrame: 270,
-        text: `To those who find it, may it bring you the same joy, protection, and luck it promised me.`
+        text: `Thank you for being a part of this journey.`
     }
 ];
 
@@ -283,7 +283,7 @@ animatedText.style.position = 'fixed';
 animatedText.style.top = '50%'; // Center vertically
 animatedText.style.left = '50%'; // Center horizontally
 animatedText.style.transform = 'translate(-50%, -50%)'; // To account for the text's own dimensions
-animatedText.style.color = 'white';
+animatedText.style.color = 'beige';
 animatedText.style.fontSize = '2em';
 animatedText.style.textAlign = 'center'; // To center-align the text content
 document.body.appendChild(animatedText);
@@ -295,7 +295,7 @@ titleText.style.position = 'fixed';
 titleText.style.top = '50%';
 titleText.style.left = '50%';
 titleText.style.transform = 'translate(-50%, -50%)';
-titleText.style.color = 'white';
+titleText.style.color = 'beige';
 titleText.style.fontSize = '3em';  // You can adjust this value as needed
 titleText.style.textAlign = 'center';
 document.body.appendChild(titleText);

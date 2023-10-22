@@ -34,13 +34,13 @@ canvas {
   display: block;
   font-size: 16px;
   margin-top: 5px;  /* Adjusted this for 5px padding between arrow and text */
-  color: white;
+  color: beige;
 }
 
 .arrow {
   width: 20px;      /* Adjusted to make the arrow smaller */
   height: 20px;     /* Adjusted to make the arrow smaller */
-  border: solid white;
+  border: solid beige;
   border-width: 0 1.5px 1.5px 0; /* Adjusted to make the arrow smaller */
   display: inline-block;
   padding: 3px;
